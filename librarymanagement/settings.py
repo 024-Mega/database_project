@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'librarymanagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mj', # Name of your database
+        'USER': 'root', # Your database username
+        'PASSWORD': '', # Your database password
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'options': {'init_command:'"SET sql_mode='STRICT_TRANS_TABLES'"}
     }
 }
 
